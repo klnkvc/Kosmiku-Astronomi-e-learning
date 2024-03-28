@@ -26,12 +26,12 @@ export default function Login() {
                             <h1 className='font-magmawave text-3xl md:text-4xl lg:text-5xl bg-gradient-to-r from-based to-based-1 inline-block text-transparent bg-clip-text'>Kosmiku</h1>
                         </div>
                         <form className='mt-16' >
-                            <div className="md:mx-20">
+                            <div className="md:mx-20 flex flex-col gap-5">
                                 <div className='flex flex-col gap-4'>
                                     <label className='text-base md:text-xl font-medium text-white' htmlFor="email">Email</label>
                                     <input type="email" name="email" id="email" class="py-3 px-5 w-full rounded-lg text-base text-white bg-transparent outline outline-white focus:bg-transparent focus:text-gray-900" placeholder="Masukkan Email" autocomplete="off" />
                                 </div>
-                                <div className='flex flex-col gap-4 mt-5'>
+                                <div className='flex flex-col gap-4'>
                                     <label className='text-base md:text-xl font-medium text-white' htmlFor="password">Password</label>
                                     <div className="relative">
                                         <input type={isPasswordVisible ? "text" : "password"} name="password" id="password" class="py-3 px-5 w-full rounded-lg text-base text-white bg-transparent outline outline-white focus:bg-transparent focus:text-gray-900" placeholder="Masukkan Password" />
@@ -47,7 +47,7 @@ export default function Login() {
                                         </div>
                                     </div>
                                 </div>
-                                <div className="flex flex-col lg:flex-row gap-3 justify-between mt-4">
+                                <div className="flex flex-col lg:flex-row gap-3 justify-between">
                                     <div class="inline-flex items-center">
                                         <label class="relative flex items-center mr-4 rounded-full cursor-pointer" htmlFor="check">
                                             <input type="checkbox"
