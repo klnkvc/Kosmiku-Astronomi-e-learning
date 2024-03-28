@@ -16,11 +16,19 @@ export default function index() {
             <section id='hero' className='hero flex justify-center py-12 md:py-16 relative'>
                 <div className="w-4/5 md:w-3/4 grid grid-cols-1 lg:grid-cols-2 gap-10 items-center">
                     <div className='text-white z-10'>
-                        <h1 className='font-magmawave text-3xl md:text-4xl lg:text-5xl bg-gradient-to-r from-based-2 to-based-3 inline-block text-transparent bg-clip-text'>Eksplorasi Alam Semesta</h1>
-
-                    </div>
-                    <div className='flex justify-center items-center order-first lg:order-none'>
-                        {/* <img className='w-96 animate-[hero_5s_linear_infinite]' src={} alt="" /> */}
+                        <h1 className='font-magmawave mb-9 text-3xl md:text-4xl lg:text-5xl bg-gradient-to-r from-based-2 to-based-3 inline-block text-transparent bg-clip-text'>Eksplorasi Alam Semesta</h1>
+                        <form action="" method="post">
+                            <div class="relative text-gray-600 focus-within:text-gray-400">
+                                <span class="absolute inset-y-0 left-0 flex items-center pl-6">
+                                    <button type="submit" class="p-1 focus:outline-none focus:shadow-outline">
+                                        <svg fill="none" stroke="rgb(107 114 128)" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" class="w-6 h-6"><path d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path></svg>
+                                    </button>
+                                </span>
+                                <div className='bg-gradient-to-r from-based to-based-1 rounded-[60px] p-1'>
+                                <input type="search" name="q" class="py-3 px-6 w-full rounded-[60px] text-base text-white bg-landing pl-14 focus:outline-none focus:bg-landing focus:text-gray-900" placeholder="Telusuri Topik" autocomplete="off" />
+                                </div>
+                            </div>
+                        </form>
                     </div>
                 </div>
                 <div className="absolute w-[900px] h-[900px] -bottom-96 -left-72 bg-white/10 rounded-full blur-3xl -z-0"></div>
