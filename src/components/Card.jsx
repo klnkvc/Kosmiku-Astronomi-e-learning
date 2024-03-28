@@ -1,7 +1,7 @@
 import React from 'react'
 import Button from './Button'
 
-export default function Card({ image, category, title, description, descClass, type }) {
+export default function Card({ image, category, title, description, descClass, type, link }) {
     return (
         <>
             {type === 'materi' ? (
@@ -24,7 +24,7 @@ export default function Card({ image, category, title, description, descClass, t
                         <h3 className='text-3xl font-bold text-left mt-8 line-clamp-2'>{title}</h3>
                         <p className='text-base text-left mt-3 mb-8 line-clamp-4'>{description}</p>
                         <div className="relative h-full"></div>
-                        <Button className={'self-stretch flex flex-col justify-center items-center text-center absolute left-0 right-0 bottom-0'} children={'Baca'} link={'/'} />
+                        <Button className={'self-stretch flex flex-col justify-center items-center text-center absolute left-0 right-0 bottom-0'} children={'Baca'} link={link} />
                         <div className=''>
                         </div>
                     </div>

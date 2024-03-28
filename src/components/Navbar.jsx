@@ -20,7 +20,7 @@ export default function Navbar({ className }) {
             <Link className='z-10 hover:bg-gradient-to-r hover:from-based hover:to-based-1 hover:inline-block hover:text-transparent hover:bg-clip-text' to={'/explore'}>Jelajahi</Link>
             <Link className='z-10 hover:bg-gradient-to-r hover:from-based hover:to-based-1 hover:inline-block hover:text-transparent hover:bg-clip-text' to={'/about-us'}>Tentang Kami</Link>
           </div>
-          <Button className={'z-10'} variant={'outline'} children={'Login'} link={'/'} />
+          <Button className={'z-10'} variant={'outline'} children={'Login'} link={'/login'} />
         </div>
 
         <nav className="px-6">

@@ -1,7 +1,7 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
 
-const Button = ({ variant = 'primary', type, link, style, className, children }) => {
+const Button = ({ variant = 'primary', type, link, style, className, onClick, children }) => {
   let buttonClassName = 'py-4 px-10 rounded-[60px] ';
   let textColorClass = 'text-white ';
 
@@ -15,14 +15,17 @@ const Button = ({ variant = 'primary', type, link, style, className, children })
 
   return (
     <>
-      {type === 'button' ? (
+      {type === 'clickable' && (
+        <button onClick={onClick} className={`text-base ${buttonClassName} ${textColorClass} ${className}`} type='button'>{children}</button>
+      )}
+      {type === 'button' && (
         <button className={`text-base ${buttonClassName} ${textColorClass} ${className}`} type='submit'>{children}</button>
-      ) : (
+      )}
+      {link && (
         <Link className={`text-base h-fit ${buttonClassName} ${textColorClass} ${className}`} to={link}>
           {children}
         </Link>
-      )
-      }
+      )}
     </>
   );
 };

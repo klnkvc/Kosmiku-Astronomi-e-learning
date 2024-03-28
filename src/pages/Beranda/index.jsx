@@ -58,10 +58,10 @@ export default function index() {
                     <h1 className='font-magmawave text-3xl md:text-4xl lg:text-5xl bg-gradient-to-r from-based to-based-1 inline-block text-transparent bg-clip-text'>Topik Populer</h1>
                     <p className='text-base mb-16'>Yuk, kita cek apa yang sebenarnya terjadi di balik cerita-cerita langit yang sering kita dengar. Apakah benar bintang jatuh itu keinginan yang dikabulkan? Temukan jawabannya di sini!</p>
 
-                    <div className="grid grid-cols-1 lg:grid-cols-3 gap-10">
-                        <Card type={'materi'} image={saturnus} category={'Astronomi'} title={'Saturnus: Cincin dan Masa Lalu yang Tersembunyi'} description={'Telusuri rahasia tersembunyi di balik cincin yang memukau serta menjelajahi jejak masa lalu planet gas raksasa yang penuh teka-teki ini.'} />
-                        <Card type={'materi'} image={mars} category={'Astronomi'} title={'Mars: Planet Merah yang Menarik'} description={'Jelajahi misteri dan keindahan planet Mars, planet merah yang penuh dengan rahasia dan potensi penelitian masa depan.'} />
-                        <Card type={'materi'} image={gerhana} category={'Mitos / fakta ?'} title={'Matahari dan Bulan: Legenda di Balik Sinar'} description={'Bagaimana pengetahuan modern kita mengenai dua benda langit ini memengaruhi keyakinan dan cerita-cerita kuno.'} />
+                    <div className="grid grid-cols-1 lg:grid-cols-3 gap-10 z-10">
+                        <Card link={'/topic'} type={'materi'} image={saturnus} category={'Astronomi'} title={'Saturnus: Cincin dan Masa Lalu yang Tersembunyi'} description={'Telusuri rahasia tersembunyi di balik cincin yang memukau serta menjelajahi jejak masa lalu planet gas raksasa yang penuh teka-teki ini.'} />
+                        <Card link={'/topic'} type={'materi'} image={mars} category={'Astronomi'} title={'Mars: Planet Merah yang Menarik'} description={'Jelajahi misteri dan keindahan planet Mars, planet merah yang penuh dengan rahasia dan potensi penelitian masa depan.'} />
+                        <Card link={'/topic'} type={'materi'} image={gerhana} category={'Mitos / fakta ?'} title={'Matahari dan Bulan: Legenda di Balik Sinar'} description={'Bagaimana pengetahuan modern kita mengenai dua benda langit ini memengaruhi keyakinan dan cerita-cerita kuno.'} />
                     </div>
                 </div>
             </section>
