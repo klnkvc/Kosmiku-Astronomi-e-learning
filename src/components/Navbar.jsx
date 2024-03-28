@@ -17,8 +17,8 @@ export default function Navbar({ className }) {
           </Link>
           <div className="flex justify-between gap-14  text-white">
             <Link className='z-10 hover:bg-gradient-to-r hover:from-based hover:to-based-1 hover:inline-block hover:text-transparent hover:bg-clip-text' to={'/'}>Beranda</Link>
-            <Link className='z-10 hover:bg-gradient-to-r hover:from-based hover:to-based-1 hover:inline-block hover:text-transparent hover:bg-clip-text' to={'/'}>Jelajahi</Link>
-            <Link className='z-10 hover:bg-gradient-to-r hover:from-based hover:to-based-1 hover:inline-block hover:text-transparent hover:bg-clip-text' to={'/'}>Tentang Kami</Link>
+            <Link className='z-10 hover:bg-gradient-to-r hover:from-based hover:to-based-1 hover:inline-block hover:text-transparent hover:bg-clip-text' to={'/explore'}>Jelajahi</Link>
+            <Link className='z-10 hover:bg-gradient-to-r hover:from-based hover:to-based-1 hover:inline-block hover:text-transparent hover:bg-clip-text' to={'/about-us'}>Tentang Kami</Link>
           </div>
           <Button className={'z-10'} variant={'outline'} children={'Login'} link={'/'} />
         </div>
@@ -52,13 +52,13 @@ export default function Navbar({ className }) {
 
             <ul className="flex flex-col rounded-lg pb-10 md:pb-20 text-white">
               <li>
-                <a href='#landing' className='duration-200 block text-lg font-bold py-3 hover:text-based rounded'>Beranda</a>
+                <Link className='duration-200 block text-lg font-bold py-3 hover:text-based rounded' to={'/'}>Beranda</Link>
               </li>
               <li>
-                <a href='#explore' className='duration-200 block text-lg font-bold py-3 hover:text-based rounded'>Jelajahi</a>
+                <Link className='duration-200 block text-lg font-bold py-3 hover:text-based rounded' to={'/explore'}>Jelajahi</Link>
               </li>
               <li>
-                <a href='#choose' className='duration-200 block text-lg font-bold py-3 hover:text-based rounded'>Tentang Kami</a>
+                <Link className='duration-200 block text-lg font-bold py-3 hover:text-based rounded' to={'/about-us'}>Tentang Kami</Link>
               </li>
               <li className='duration-200 block text-lg font-bold py-3 hover:text-based rounded text-right'>
                 <Button variant={'primary'} children={'Login'} link={'/'} />

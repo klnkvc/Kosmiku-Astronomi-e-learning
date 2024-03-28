@@ -32,7 +32,7 @@ export default function Footer() {
                     <div className='w-full md:w-1/5 flex flex-col'>
                         <h4 className='text-base md:text-xl font-bold mb-3 bg-gradient-to-r from-based to-based-1 inline-block text-transparent bg-clip-text'>Hubungi Kami</h4>
                         <div className='flex flex-col gap-y-1'>
-                            <Link className='text-base z-10' to={'/'}>+62 858-8550-2540</Link>
+                            <Link className='text-base z-10' to={'/'}>085885502540</Link>
                             <Link className='text-base z-10' to={'/'}>kosmiku@team.com</Link>
                         </div>
                     </div>
@@ -46,7 +46,7 @@ export default function Footer() {
                         </div>
                     </div>
                 </div>
-                <hr className="h-px my-16 bg-white border-0"></hr>
+                <hr className="h-px z-10 my-16 bg-white border-0"></hr>
                 <p className='text-sm text-center mb-10'>© Copyright 2024, All Rights Reserved by Kosmiku</p>
             </div>
         </section>

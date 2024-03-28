@@ -1,3 +1,5 @@
 import Beranda from './Beranda'
+import Tentang from './Tentang'
+import Jelajahi from './Jelajahi'
 
-export { Beranda }
+export { Beranda, Tentang, Jelajahi }

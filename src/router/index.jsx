@@ -7,6 +7,8 @@ export default function ReactRouter() {
     <>
     <Routes>
         <Route path='/' element={<Pages.Beranda/>} />
+        <Route path='/about-us' element={<Pages.Tentang/>} />
+        <Route path='/explore' element={<Pages.Jelajahi/>} />
     </Routes>
     </>
   )

@@ -36,6 +36,7 @@ export default {
             },
             animation: {
                 hero: "hero 5s linear infinite",
+                'spin-slow': 'spin 20s linear infinite',
             },
         },
     },
