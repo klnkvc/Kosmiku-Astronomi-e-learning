@@ -8,6 +8,7 @@ export default function ReactRouter() {
     <Routes>
         <Route path='/' element={<Pages.Beranda/>} />
         <Route path='/register' element={<Pages.Register/>} />
+        <Route path='/profile' element={<Pages.Profile/>} />
         <Route path='/login' element={<Pages.Login/>} />
         <Route path='/about-us' element={<Pages.Tentang/>} />
         <Route path='/explore' element={<Pages.Jelajahi/>} />
