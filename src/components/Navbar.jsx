@@ -38,7 +38,7 @@ export default function Navbar({ className }) {
         </nav>
       </div>
 
-      <div onClick={() => setOpenMenu(false)} className={`duration-500 fixed inset-0 bg-black z-20 ${openMenu ? 'opacity-50 pointer-events-auto' : 'opacity-0 pointer-events-none'}`}></div>
+      <div onClick={() => setOpenMenu(false)} className={`duration-500 fixed inset-0 bg-black z-30 ${openMenu ? 'opacity-50 pointer-events-auto' : 'opacity-0 pointer-events-none'}`}></div>
 
       {
         openMenu && (

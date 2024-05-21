@@ -5,14 +5,16 @@ import hero from '../../assets/hero/hero.png'
 import explore from '../../assets/hero/explore.png'
 import sources from '../../assets/hero/sources.png'
 import saturnus from '../../assets/hero/saturnus.jpeg'
-import kosmiQuest from '../../assets/hero/kosmiQuest.png'
 import mars from '../../assets/hero/mars.jpeg'
 import gerhana from '../../assets/hero/gerhana.jpeg'
+import kosmiQuest from '../../assets/hero/kosmiQuest.png'
 import Card from '../../components/Card'
+import Chatbot from '../../components/Chatbot'
 
 export default function index() {
     return (
         <BasedLayout>
+            <Chatbot />
             <section id='hero' className='hero flex justify-center py-12 md:py-16 relative'>
                 <div className="w-4/5 md:w-3/4 grid grid-cols-1 lg:grid-cols-2 gap-10 items-center">
                     <div className='text-white z-10'>
