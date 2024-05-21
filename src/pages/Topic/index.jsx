@@ -3,6 +3,7 @@ import BasedLayout from '../../layout/BasedLayout'
 import saturn from '../../assets/topic/saturn.png'
 import saturnus from '../../assets/topic/saturnus.png'
 import Discussion from '../../components/Discussion'
+import Quest from '../../components/Quest'
 
 export default function index() {
     return (
@@ -23,6 +24,7 @@ export default function index() {
                 </div>
                 <div className="absolute w-[900px] h-[900px] -bottom-96 -left-72 bg-white/10 rounded-full blur-3xl -z-0"></div>
             </section>
+            <Quest link={'/quest'} />
             <Discussion />
         </BasedLayout>
     )

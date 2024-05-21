@@ -7,9 +7,9 @@ import sources from '../../assets/hero/sources.png'
 import saturnus from '../../assets/hero/saturnus.jpeg'
 import mars from '../../assets/hero/mars.jpeg'
 import gerhana from '../../assets/hero/gerhana.jpeg'
-import kosmiQuest from '../../assets/hero/kosmiQuest.png'
 import Card from '../../components/Card'
 import Chatbot from '../../components/Chatbot'
+import Quest from '../../components/Quest'
 
 export default function index() {
     return (
@@ -69,20 +69,7 @@ export default function index() {
                 </div>
             </section>
 
-            <section id='kosmiQuest' className='kosmiQuest flex justify-center py-12 md:py-16 relative'>
-                <div className="w-4/5 md:w-3/4 grid grid-cols-1 lg:grid-cols-2 gap-10 items-center">
-                    <div className='flex justify-center items-center order-first lg:order-none z-10'>
-                        <img className='w-72' src={kosmiQuest} alt="" />
-                    </div>
-                    <div className='text-white z-10'>
-                        <h1 className='font-magmawave text-3xl md:text-4xl lg:text-5xl bg-gradient-to-r from-based-2 to-based-3 inline-block text-transparent bg-clip-text'>KOSMI QUEST</h1>
-                        <p className='my-9 text-base'>Tantang dirimu dalam Kosmi Quest! Rasakan keseruan memecahkan setiap tantangannya dan temukan permainan yang sesuai dengan minatmu. Bergabunglah sekarang dan mulailah petualanganmu!</p>
-                        <div className='flex flex-col justify-center items-center text-center'>
-                            <Button className={'self-stretch z-10'} children={'Kosmi Quest'} link={'/explore'} />
-                        </div>
-                    </div>
-                </div>
-            </section>
+            <Quest link={'/explore'} />
 
             <section id='hubungi' className='hubungi flex flex-col justify-center py-12 md:py-16 relative items-center'>
                 <div className='text-white text-center w-4/5 md:w-3/4 grid grid-cols-1 gap-8 z-10'>

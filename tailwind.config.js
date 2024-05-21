@@ -21,6 +21,10 @@ export default {
             shadowBased: "#B15636",
             card: "#D9E9F8",
             landing: "#111A28",
+            quest: "#171923",
+            "quest-1": '#F2A100',
+            rightSelected: '#00B41D',
+            wrongSelected: '#E92E27',
         },
         extend: {
             fontFamily: {
