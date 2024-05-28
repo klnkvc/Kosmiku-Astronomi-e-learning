@@ -21,6 +21,7 @@ export default function Card({ image, category, title, description, descClass, t
                                 </div>
                             )
                         }
+                        
                         <h3 className='text-3xl font-bold text-left mt-8 line-clamp-2'>{title}</h3>
                         <p className='text-base text-left mt-3 mb-8 line-clamp-4'>{description}</p>
                         <div className="relative h-full"></div>

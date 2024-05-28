@@ -8,7 +8,6 @@ import saturnus from '../../assets/hero/saturnus.jpeg'
 import mars from '../../assets/hero/mars.jpeg'
 import gerhana from '../../assets/hero/gerhana.jpeg'
 import Card from '../../components/Card'
-import Chatbot from '../../components/Chatbot'
 
 export default function index() {
     return (
@@ -78,7 +77,6 @@ export default function index() {
                 <div className="absolute w-[900px] h-[900px] -bottom-96 -left-72 bg-white/10 rounded-full blur-3xl -z-0"></div>
             </section>
 
-            <section className='fixed bottom-4 right-4'><Chatbot></Chatbot></section>
         </BasedLayout>
     )
 }
