@@ -11,19 +11,24 @@ export default function index() {
         <BasedLayout>
             <sections
                 id="Profile"
-                className="flex flex-col border-solid border-based-1 rounded-lg border-4 mx-20 relative p-10 bg-category-5 min-h-min"
+                className="flex flex-col border-solid border-based-1 rounded-lg border-4 mx-4 lg:mx-20 relative p-10 bg-category-5 min-h-min gap-10"
             >
-                <div id="upper" className="w-full flex gap-3">
+                <div
+                    id="upper"
+                    className="w-full flex items-center gap-3 lg:gap-10"
+                >
                     <img
                         id="Avatar"
                         src={Profile}
-                        className="max-w-40 max-h-40"
+                        className="w-20 h-20 lg:w-40 lg:h-40"
                     ></img>
                     <div className="flex flex-col">
-                        <h1 className="text-3xl font-bold text-left mt-8 line-clamp-2 text-white">
+                        <h1 className=" text-lg lg:text-3xl font-bold text-left line-clamp-2 text-white">
                             Paduka Javier
                         </h1>
-                        <p className="text-white">masihmewing2024@gmail.com</p>
+                        <p className="text-white text-sm lg:text-md">
+                            masihmewing2024@gmail.com
+                        </p>
                     </div>
                 </div>
 
@@ -33,7 +38,7 @@ export default function index() {
                             id="koleksi"
                             className="cursor-pointer flex w-1/2 items-center justify-center border-b-4 border-solid border-based-1 p-1"
                         >
-                            <p className="text-2xl font-bold text-left line-clamp-2 text-based-1">
+                            <p className=" text-md lg:text-2xl font-bold text-left line-clamp-2 text-based-1">
                                 Koleksi
                             </p>
                         </div>
@@ -41,13 +46,13 @@ export default function index() {
                             id="diskusi"
                             className="cursor-pointer flex w-1/2 items-center justify-center border-b-2 border-solid border-white p-1"
                         >
-                            <p className="text-2xl font-regular text-left line-clamp-2 text-white">
+                            <p className="text-md lg:text-2xl font-regular text-left line-clamp-2 text-white">
                                 Diskusi
                             </p>
                         </div>
                     </div>
                     {/* User's Data */}
-                    <div className="flex gap-4 w-full justify-start items-center">
+                    <div className="flex overflow-auto gap-4 w-full justify-start items-center">
                         {" "}
                         <ProfileCard
                             title="Mars: Planet Merah yang Menarik"
