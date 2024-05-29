@@ -5,6 +5,7 @@ import logo from "../../assets/decoration/kosmiku.png";
 import hide from "../../assets/decoration/hide.svg";
 import show from "../../assets/decoration/show.svg";
 import { Link } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 
 export default function Register() {
     const [isPasswordVisible, setIsPasswordVisible] = useState(false);
@@ -18,6 +19,10 @@ export default function Register() {
     const [password, setPassword] = useState("");
     const [confirmPassword, setConfirmPassword] = useState("");
     const [errorMessage, setErrorMessage] = useState("");
+    const navigate = useNavigate();
+
+    //API
+    const [error, setError] = useState("");
 
     function togglePasswordVisibility() {
         setIsPasswordVisible((prevState) => !prevState);
@@ -34,7 +39,28 @@ export default function Register() {
             return;
         }
 
-        console.log(name, email, degree, dob, password);
+        const userData = { name, email, degree, dob, password };
+        fetch("http://localhost:8081/user/register", {
+            method: "POST",
+            headers: { "Content-Type": "application/json" },
+            body: JSON.stringify(userData),
+        })
+            .then((response) => {
+                if (!response.ok) {
+                    throw new Error("Failed to register");
+                }
+                return response.json();
+            })
+            .then((data) => {
+                console.log("isi data", data);
+                localStorage.setItem("isLoggedIn", true);
+                localStorage.setItem("user", JSON.stringify(data));
+                navigate("/");
+            })
+            .catch((error) => {
+                setError("Register Failed");
+                console.log(error);
+            });
     };
     return (
         <BasedLayout>

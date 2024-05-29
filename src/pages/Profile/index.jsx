@@ -3,10 +3,17 @@ import BasedLayout from "../../layout/BasedLayout";
 import Profile from "../../assets/Profile/padukajavier.png";
 import deco from "../../assets/decoration/deco1.png";
 import logo from "../../assets/decoration/kosmiku.png";
+import Button from "../../components/Button";
 import image from "../../assets/hero/mars.jpeg";
+import { useNavigate } from "react-router-dom";
 import ProfileCard from "../../components/ProfileCard";
 
 export default function index() {
+    const handleLogout = () => {
+        localStorage.setItem("isLoggedIn", "false");
+        navigate("/");
+    };
+    const navigate = useNavigate();
     return (
         <BasedLayout>
             <sections
@@ -29,7 +36,13 @@ export default function index() {
                         <p className="text-white text-sm lg:text-md">
                             masihmewing2024@gmail.com
                         </p>
-                    </div>
+                    </div>{" "}
+                    <button
+                        className="bg-[#E92E27] text-white px-6 py-2 rounded-[60px]"
+                        onClick={handleLogout}
+                    >
+                        Logout
+                    </button>
                 </div>
 
                 <div id="content" className="flex flex-col gap-10">
