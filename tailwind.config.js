@@ -22,6 +22,7 @@ export default {
             shadowBased: "#B15636",
             card: "#D9E9F8",
             landing: "#111A28",
+            error: "rgb(252 165 165)",
         },
         extend: {
             fontFamily: {
