@@ -1,7 +1,8 @@
 import React, { useState } from "react";
 import BasedLayout from "../../layout/BasedLayout";
 import Button from "../../components/Button";
-import logo from "../../assets/decoration/kosmiku.png";
+import logo from "../../assets/decoration/logo.png";
+
 import hide from "../../assets/decoration/hide.svg";
 import show from "../../assets/decoration/show.svg";
 import { Link } from "react-router-dom";
@@ -65,24 +66,18 @@ export default function Register() {
   return (
     <BasedLayout>
       <section id="login" className="login flex flex-col justify-center py-12 md:py-16 relative items-center">
-        <div className="text-white text-center w-4/5 md:w-3/4 grid grid-cols-1 gap-8 z-10">
-          <h1 className="font-magmawave text-3xl md:text-4xl lg:text-5xl bg-gradient-to-r from-based-2 to-based-3 inline-block text-transparent bg-clip-text">
-            SeLamat datang Para penjelajah kosmik!
-          </h1>
-          <p className="text-base md:text-2xl font-bold mb-16 bg-gradient-to-r from-based-2 to-based-3 inline-block text-transparent bg-clip-text">
-            Ayo buat akun kosmik anda mari kita jelajahi fenomena astronomi!
-          </p>
+        <div className="text-white text-center w-4/5 md:w-3/4 grid grid-cols-1 mt-12 xl:mt-20 gap-8 z-10">
+          <h1 className="font-magmawave text-3xl bg-gradient-to-r from-based-2 mb-8 to-based-3 inline-block text-transparent bg-clip-text">SeLamat datang Para penjelajah kosmik!</h1>
         </div>
         <div className="w-full md:w-3/4 xl:w-1/2 px-8">
           <div className="w-full  border border-white rounded-3xl backdrop-opacity-10 backdrop-invert bg-category-5 p-8">
             <div className="logo flex flex-col items-center gap-3">
-              <img className="w-24" src={logo} alt="" />
-              <h1 className="font-magmawave text-3xl md:text-4xl lg:text-5xl bg-gradient-to-r from-based to-based-1 inline-block text-transparent bg-clip-text">Kosmiku</h1>
+              <img className="h-16 sm:h-24" src={logo} alt="" />
             </div>
-            <form className="mt-16" onSubmit={handleSubmit}>
+            <form className="mt-2" onSubmit={handleSubmit}>
               <div className="md:mx-20 flex flex-col gap-5">
                 <div className="flex flex-col gap-4">
-                  <label className="text-base md:text-xl font-medium text-white" htmlFor="name">
+                  <label className="text-base font-medium text-white" htmlFor="name">
                     Nama Lengkap
                   </label>
                   <input
@@ -90,7 +85,7 @@ export default function Register() {
                     required
                     name="name"
                     id="name"
-                    className="py-3 px-5 w-full rounded-lg text-base text-white bg-transparent outline outline-white focus:bg-transparent focus:text-gray-900"
+                    className="bg-transparent border-2 py-3 px-5 rounded-lg text-xs border-based-1 outline-offset-0 text-white focus:outline-based-1 focus:outline-4 focus:outline-offset-4 transition-all duration-200"
                     placeholder="Masukkan Nama"
                     autoComplete="off"
                     value={nama_lengkap}
@@ -98,7 +93,7 @@ export default function Register() {
                   />
                 </div>
                 <div className="flex flex-col gap-4">
-                  <label className="text-base md:text-xl font-medium text-white" htmlFor="email">
+                  <label className="text-base font-medium text-white" htmlFor="email">
                     Alamat Email
                   </label>
                   <input
@@ -106,7 +101,7 @@ export default function Register() {
                     required
                     name="email"
                     id="email"
-                    className="py-3 px-5 w-full rounded-lg text-base text-white bg-transparent outline outline-white focus:bg-transparent focus:text-gray-900"
+                    className="bg-transparent border-2 py-3 px-5 rounded-lg text-xs border-based-1 outline-offset-0 text-white focus:outline-based-1 focus:outline-4 focus:outline-offset-4 transition-all duration-200"
                     placeholder="Masukkan Email"
                     autoComplete="off"
                     value={alamat_email}
@@ -114,7 +109,7 @@ export default function Register() {
                   />
                 </div>
                 <div className="flex flex-col gap-4">
-                  <label className="text-base md:text-xl font-medium text-white" htmlFor="degree">
+                  <label className="text-base font-medium text-white" htmlFor="degree">
                     Jenjang Pendidikan
                   </label>
                   <select
@@ -122,11 +117,11 @@ export default function Register() {
                     required
                     id="degree"
                     autoComplete="off"
-                    className="py-3 px-5 w-full rounded-lg text-base text-white bg-transparent outline outline-white focus:bg-transparent focus:text-gray-900"
+                    className="bg-transparent border-2 py-3  px-5 rounded-lg text-xs border-based-1 outline-offset-0 text-white focus:outline-based-1 focus:outline-4 focus:outline-offset-4 transition-all duration-200 focus:bg-category-5 focus:border-based-1 appearance-none"
                     value={jenjang_pendidikan}
                     onChange={(e) => setDegree(e.target.value)}
                   >
-                    <option value="" selected disabled>
+                    <option className="text-white/20 h-7" value="" selected disabled>
                       Pilih Jenjang Pendidikan
                     </option>
                     <option value="sd">Sekolah Dasar</option>
@@ -137,7 +132,7 @@ export default function Register() {
                   </select>
                 </div>
                 <div className="flex flex-col gap-4">
-                  <label className="text-base md:text-xl font-medium text-white" htmlFor="birthdate">
+                  <label className="text-base font-medium text-white" htmlFor="birthdate">
                     Tanggal Lahir
                   </label>
                   <input
@@ -146,13 +141,13 @@ export default function Register() {
                     name="birthdate"
                     autoComplete="off"
                     id="birthdate"
-                    className="py-3 px-5 w-full rounded-lg text-base text-white bg-transparent outline outline-white focus:bg-transparent focus:text-gray-900"
+                    className="bg-transparent border-2 py-3 px-5 rounded-lg text-xs border-based-1 outline-offset-0 text-white focus:outline-based-1 focus:outline-4 focus:outline-offset-4 transition-all duration-200 appearance-none web"
                     value={tanggal_lahir}
                     onChange={(e) => setDob(e.target.value)}
                   />
                 </div>
                 <div className="flex flex-col gap-4">
-                  <label className="text-base md:text-xl font-medium text-white" htmlFor="password">
+                  <label className="text-base font-medium text-white" htmlFor="password">
                     Password
                   </label>
                   <div className="relative">
@@ -162,7 +157,7 @@ export default function Register() {
                       name="password"
                       id="password"
                       autoComplete="off"
-                      className="py-3 px-5 w-full rounded-lg text-base text-white bg-transparent outline outline-white focus:bg-transparent focus:text-gray-900"
+                      className="bg-transparent border-2 py-3 px-5 rounded-lg text-xs border-based-1 outline-offset-0 text-white focus:outline-based-1 focus:outline-4 focus:outline-offset-4 transition-all duration-200 w-full"
                       placeholder="Masukkan Password"
                       value={password}
                       onChange={(e) => setPassword(e.target.value)}
@@ -173,7 +168,7 @@ export default function Register() {
                   </div>
                 </div>
                 <div className="flex flex-col gap-4">
-                  <label className="text-base md:text-xl font-medium text-white" htmlFor="confirm">
+                  <label className="text-base font-medium text-white" htmlFor="confirm">
                     Konfirmasi Password
                   </label>
                   <div className="relative">
@@ -182,7 +177,7 @@ export default function Register() {
                       name="confirm"
                       id="confirm"
                       required
-                      className="py-3 px-5 w-full rounded-lg text-base text-white bg-transparent outline outline-white focus:bg-transparent focus:text-gray-900"
+                      className="bg-transparent border-2 py-3 px-5 rounded-lg text-xs border-based-1 outline-offset-0 text-white focus:outline-based-1 focus:outline-4 focus:outline-offset-4 transition-all duration-200 w-full"
                       placeholder="Masukkan Password"
                       autoComplete="off"
                       value={confirmPassword}
@@ -194,7 +189,7 @@ export default function Register() {
                   </div>
                 </div>
                 {errorMessage && password !== confirmPassword && <p className="text-error font-bold">{errorMessage}</p>}
-                <p className="text-white text-center text-sm md:text-base">
+                <p className="text-white text-center text-sm">
                   Sudah punya akun?{" "}
                   <span>
                     <Link className="text-based-1" to={"/login"}>

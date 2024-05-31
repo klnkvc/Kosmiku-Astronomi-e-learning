@@ -26,7 +26,7 @@ export default {
       "quest-1": "#F2A100",
       rightSelected: "#00B41D",
       wrongSelected: "#E92E27",
-      error: "#E92E27",
+      error: "#FF8E8A",
     },
     extend: {
       fontFamily: {
