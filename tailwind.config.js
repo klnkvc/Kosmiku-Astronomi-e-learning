@@ -8,6 +8,7 @@ export default {
       "based-1": "#FCD567",
       "based-2": "#63B3ED",
       "based-3": "#BEE3F8",
+      "based-4": "#F7B311",
       "category-1": "#322659",
       "category-2": "#9F7AEA",
       "category-3": "#1A365D",
