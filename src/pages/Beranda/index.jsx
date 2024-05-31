@@ -21,10 +21,10 @@ export default function index() {
   return (
     <BasedLayout>
       <Chatbot />
-      <section id="hero" className="hero flex justify-center py-12 md:py-16 relative">
+      <section id="hero" className="hero mt-10 lg:mt-32 flex justify-center py-12 md:py-16 relative">
         <div className="w-4/5 grid grid-cols-1 lg:grid-cols-2 lg:gap-10 items-center">
           <div className="text-white z-10">
-            <h1 className="font-magmawave text-center lg:text-left text-2xl md:text-3xl lg:text-4xl leading-normal bg-gradient-to-r from-based-2 to-based-3 inline-block text-transparent bg-clip-text">
+            <h1 className="font-magmawave lg:text-left w-full text-center text-2xl md:text-3xl lg:text-4xl leading-normal bg-gradient-to-r from-based-2 to-based-3 inline-block text-transparent bg-clip-text">
               Eksplorasi Alam Semesta
             </h1>
             <p className="my-4 text-center lg:text-left lg:my-9 text-sm lg:text-base leading-relaxed">
@@ -47,7 +47,7 @@ export default function index() {
             <img className="w-64 lg:w-96" src={explore} alt="" />
           </div>
           <div className="text-white z-10">
-            <h1 className="font-magmawave text-center lg:text-left text-2xl md:text-3xl lg:text-4xl leading-normal bg-gradient-to-r from-based-2 to-based-3 inline-block text-transparent bg-clip-text">
+            <h1 className="font-magmawave w-full text-center lg:text-left text-2xl md:text-3xl lg:text-4xl leading-normal bg-gradient-to-r from-based-2 to-based-3 inline-block text-transparent bg-clip-text">
               Eksplorasi Tata Surya
             </h1>
             <p className="my-4 text-center lg:text-left lg:my-9 text-sm lg:text-base leading-relaxed">
@@ -77,7 +77,7 @@ export default function index() {
       </section>
 
       <section id="homePopular" className="homePopular flex flex-col justify-center py-12 md:py-16 relative items-center">
-        <div className="text-white text-center w-4/5 grid grid-cols-1 lg gap-2 lg:gap-8">
+        <div className="text-white text-center w-4/5 grid grid-cols-1 gap-2 lg:gap-8">
           <h1 className="font-magmawave text-center text-2xl md:text-3xl lg:text-4xl leading-normal bg-gradient-to-r from-based to-based-1 inline-block text-transparent bg-clip-text">
             Topik Populer
           </h1>
