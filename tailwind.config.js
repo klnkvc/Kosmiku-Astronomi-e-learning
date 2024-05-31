@@ -12,6 +12,7 @@ export default {
             "category-2": "#9F7AEA",
             "category-3": "#1A365D",
             "category-4": "#3182CE",
+             "category-5": "#171923",
             slate: "#D9D9D9",
             "slate-2": "#969292",
             "dark-slate": "#8A8787",
@@ -25,6 +26,7 @@ export default {
             "quest-1": '#F2A100',
             rightSelected: '#00B41D',
             wrongSelected: '#E92E27',
+              error: "#E92E27",
         },
         extend: {
             fontFamily: {
@@ -43,6 +45,12 @@ export default {
                 'spin-slow': 'spin 20s linear infinite',
             },
         },
+      },
+      animation: {
+        hero: "hero 5s linear infinite",
+        "spin-slow": "spin 20s linear infinite",
+      },
     },
-    plugins: [],
+  },
+  plugins: [],
 };
