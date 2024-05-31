@@ -19,7 +19,7 @@ export default {
       white: "#FFFFFF",
       black: "#000000",
       hero: "#fbfbfb",
-      shadowBased: "#B15636",
+      shadowBased: "#854934",
       card: "#D9E9F8",
       landing: "#111A28",
       quest: "#171923",
