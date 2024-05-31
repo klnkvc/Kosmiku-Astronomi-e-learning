@@ -34,7 +34,7 @@ export default function Card({ image, category, title, description, descClass, t
           </div>
         </div>
       ) : (
-        <div className="w-full border border-white rounded-[32px] backdrop-opacity-10 backdrop-invert bg-white/10 p-8 duration-200 hover:scale-105">
+        <div className="w-full border border-white rounded-[32px] bg-white/10 p-4 duration-200 hover:scale-105 backdrop-blur-sm">
           <div className="flex justify-center">
             <img className="h-[135px]" src={image} alt="" />
           </div>
