@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import BasedLayout from "../../layout/BasedLayout";
-import logo from "../../assets/decoration/kosmiku.png";
+import logo from "../../assets/decoration/logo.png";
 import hide from "../../assets/decoration/hide.svg";
 import show from "../../assets/decoration/show.svg";
 import Button from "../../components/Button";
@@ -45,31 +45,25 @@ export default function Login() {
   return (
     <BasedLayout>
       <section id="login" className="login flex flex-col justify-center py-12 md:py-16 relative items-center">
-        <div className="text-white text-center w-4/5 md:w-3/4 grid grid-cols-1 gap-8 z-10">
-          <h1 className="font-magmawave text-3xl md:text-4xl lg:text-5xl bg-gradient-to-r from-based-2 to-based-3 inline-block text-transparent bg-clip-text">
-            SeLamat datang Para penjelajah kosmik!
-          </h1>
-          <p className="text-base md:text-2xl font-bold mb-16 bg-gradient-to-r from-based-2 to-based-3 inline-block text-transparent bg-clip-text">
-            Login untuk mendapatkan notifikasi berita terbaru !
-          </p>
+        <div className="text-white text-center w-4/5 md:w-3/4 grid grid-cols-1 mt-12 xl:mt-20 gap-8 z-10">
+          <h1 className="font-magmawave text-3xl bg-gradient-to-r from-based-2 mb-8 to-based-3 inline-block text-transparent bg-clip-text">SeLamat datang Para penjelajah kosmik!</h1>
         </div>
         <div className="w-full  md:w-3/4 xl:w-1/2 px-8">
-          <div className="w-full  border border-white rounded-3xl backdrop-opacity-10 backdrop-invert bg-category-5 p-8">
+          <div className="w-full  border-2 border-based-1 rounded-3xl backdrop-opacity-10 backdrop-invert bg-category-5 p-8">
             <div className="logo flex flex-col items-center gap-3">
-              <img className="w-24" src={logo} alt="" />
-              <h1 className="font-magmawave text-3xl md:text-4xl lg:text-5xl bg-gradient-to-r from-based to-based-1 inline-block text-transparent bg-clip-text">Kosmiku</h1>
+              <img className="h-16 sm:h-24" src={logo} alt="" />
             </div>
-            <form className="mt-16" onSubmit={handleSubmit}>
+            <form className="mt-2" onSubmit={handleSubmit}>
               <div className="md:mx-20 flex flex-col gap-5">
                 <div className="flex flex-col gap-4">
-                  <label className="text-base md:text-xl font-medium text-white" htmlFor="email">
+                  <label className="text-base font-medium text-white" htmlFor="email">
                     Email
                   </label>
                   <input
                     type="email"
                     name="email"
                     id="email"
-                    className="py-3 px-5 w-full rounded-lg text-base text-white bg-transparent outline outline-white focus:bg-transparent focus:text-gray-900"
+                    className="bg-transparent border-2 py-3 px-5 rounded-lg text-xs border-based-1 outline-offset-0 text-white focus:outline-based-1 focus:outline-4 focus:outline-offset-4 transition-all duration-200"
                     placeholder="Masukkan Email"
                     value={email}
                     onChange={(e) => setEmail(e.target.value)}
@@ -77,7 +71,7 @@ export default function Login() {
                   />
                 </div>
                 <div className="flex flex-col gap-4">
-                  <label className="text-base md:text-xl font-medium text-white" htmlFor="password">
+                  <label className="text-base font-medium text-white" htmlFor="password">
                     Password
                   </label>
                   <div className="relative">
@@ -85,7 +79,7 @@ export default function Login() {
                       type={isPasswordVisible ? "text" : "password"}
                       name="password"
                       id="password"
-                      className="py-3 px-5 w-full rounded-lg text-base text-white bg-transparent outline outline-white focus:bg-transparent focus:text-gray-900"
+                      className="w-full bg-transparent border-2 py-3 px-5 rounded-lg text-xs border-based-1 outline-offset-0 text-white focus:outline-based-1 focus:outline-4 focus:outline-offset-4 transition-all duration-200"
                       placeholder="Masukkan Password"
                       value={password}
                       onChange={(e) => setPassword(e.target.value)}
@@ -109,11 +103,11 @@ export default function Login() {
                         </svg>
                       </span>
                     </label>
-                    <label className="mt-px font-medium text-sm md:text-base text-white cursor-pointer select-none" htmlFor="check">
+                    <label className="mt-px font-medium text-xs text-white cursor-pointer select-none" htmlFor="check">
                       Remember Me
                     </label>
                   </div>
-                  <p className="text-white text-center text-sm md:text-base">
+                  <p className="text-white text-center text-sm">
                     Tidak punya akun?{" "}
                     <span>
                       <Link className="text-based-1" to={"/register"}>
@@ -124,7 +118,7 @@ export default function Login() {
                 </div>
                 {errorMessage && <p className="text-error text-center font-bold">{errorMessage}</p>}
               </div>
-              <Button className={"w-full mt-4 md:mt-16"} type={"button"} variant={"outline"} children={"Login"} />
+              <Button className={"w-full mt-4 md:mt-8"} type={"button"} variant={"outline"} children={"Login"} />
             </form>
           </div>
         </div>
