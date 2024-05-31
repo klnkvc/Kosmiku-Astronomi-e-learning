@@ -1,13 +1,15 @@
-import React, { useEffect, useState } from "react";
-import BasedLayout from "../../layout/BasedLayout";
-import Button from "../../components/Button";
-import hero from "../../assets/hero/hero.png";
-import explore from "../../assets/hero/explore.png";
-import sources from "../../assets/hero/sources.png";
-import saturnus from "../../assets/hero/saturnus.jpeg";
-import mars from "../../assets/hero/mars.jpeg";
-import gerhana from "../../assets/hero/gerhana.jpeg";
-import Card from "../../components/Card";
+import React from 'react'
+import BasedLayout from '../../layout/BasedLayout'
+import Button from '../../components/Button'
+import hero from '../../assets/hero/hero.png'
+import explore from '../../assets/hero/explore.png'
+import sources from '../../assets/hero/sources.png'
+import saturnus from '../../assets/hero/saturnus.jpeg'
+import mars from '../../assets/hero/mars.jpeg'
+import gerhana from '../../assets/hero/gerhana.jpeg'
+import Card from '../../components/Card'
+import Chatbot from '../../components/Chatbot'
+import Quest from '../../components/Quest'
 
 export default function index() {
     const [isLoggedIn, setIsLoggedIn] = useState(false);
@@ -18,10 +20,8 @@ export default function index() {
     }, []);
     return (
         <BasedLayout>
-            <section
-                id="hero"
-                className="hero flex justify-center py-12 md:py-16 relative"
-            >
+            <Chatbot />
+            <section id='hero' className='hero flex justify-center py-12 md:py-16 relative'>
                 <div className="w-4/5 md:w-3/4 grid grid-cols-1 lg:grid-cols-2 gap-10 items-center">
                     <div className="text-white z-10">
                         <h1 className="font-magmawave text-3xl md:text-4xl lg:text-5xl bg-gradient-to-r from-based-2 to-based-3 inline-block text-transparent bg-clip-text">
@@ -151,24 +151,15 @@ export default function index() {
                 </div>
             </section>
 
-            <section
-                id="hubungi"
-                className="hubungi flex flex-col justify-center py-12 md:py-16 relative items-center"
-            >
-                <div className="text-white text-center w-4/5 md:w-3/4 grid grid-cols-1 gap-8 z-10">
-                    <h1 className="font-magmawave text-3xl md:text-4xl lg:text-5xl bg-gradient-to-r from-based to-based-1 inline-block text-transparent bg-clip-text">
-                        hubungi kami
-                    </h1>
-                    <p className="text-base mb-8">
-                        Memiliki pertanyaan? ingin bekerja sama dengan kami?
-                        hubungi kami sekarang juga!
-                    </p>
-                    <div className="flex flex-col justify-center items-center text-center">
-                        <Button
-                            className={"self-stretch z-10"}
-                            children={"Hubungi Kami"}
-                            link={"/"}
-                        />
+            <Quest link={'/explore'} />
+
+            <section id='hubungi' className='hubungi flex flex-col justify-center py-12 md:py-16 relative items-center'>
+                <div className='text-white text-center w-4/5 md:w-3/4 grid grid-cols-1 gap-8 z-10'>
+                    <h1 className='font-magmawave text-3xl md:text-4xl lg:text-5xl bg-gradient-to-r from-based to-based-1 inline-block text-transparent bg-clip-text'>TERHUBUNG DENGAN KOSMOS</h1>
+                    <p className='text-base mb-8'>Memiliki pertanyaan?, ingin bekerja sama dengan kami? hubungi kami sekarang juga untuk kolaborasi yang menakjubkan!</p>
+                    <div className='flex flex-col justify-center items-center text-center'>
+                        <Button className={'self-stretch z-10'} children={'Hubungi Kami'} link={'/'} />
+
                     </div>
                 </div>
                 <div className="absolute w-[900px] h-[900px] -bottom-96 -left-72 bg-white/10 rounded-full blur-3xl -z-0"></div>

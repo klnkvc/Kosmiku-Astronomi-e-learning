@@ -61,7 +61,7 @@ export default function Navbar(className) {
         </nav>
       </div>
 
-      <div onClick={() => setOpenMenu(false)} className={`duration-500 fixed inset-0 bg-black z-20 ${openMenu ? "opacity-50 pointer-events-auto" : "opacity-0 pointer-events-none"}`}></div>
+      <div onClick={() => setOpenMenu(false)} className={`duration-500 fixed inset-0 bg-black z-30 ${openMenu ? 'opacity-50 pointer-events-auto' : 'opacity-0 pointer-events-none'}`}></div>
 
       {openMenu && (
         <div className="duration-500 w-full fixed top-0 z-50 bg-landing px-6 shadow-2xl translate-x-0">
