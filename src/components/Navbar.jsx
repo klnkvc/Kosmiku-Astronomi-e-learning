@@ -22,7 +22,7 @@ export default function Navbar(className) {
   }, []);
   return (
     <section id="navbar" className={`navbar ${className}`}>
-      <div className="max-w-[1700px] mx-auto px-0 md:px-4 lg:px-32 py-6 z-10">
+      <div className="fixed w-screen bg-category-5/40 backdrop-blur-sm max-w-[1700px] mx-auto px-0 md:px-4 lg:px-32 py-1 border-b-2 border-based-1 z-50">
         <div className="hidden lg:flex justify-between items-center z-10">
           <Link className="z-10" to={"/"}>
             <img className="w-36 lg:w-44 xl:w-60" src={logo} alt="" />
@@ -61,7 +61,7 @@ export default function Navbar(className) {
         </nav>
       </div>
 
-      <div onClick={() => setOpenMenu(false)} className={`duration-500 fixed inset-0 bg-black z-30 ${openMenu ? 'opacity-50 pointer-events-auto' : 'opacity-0 pointer-events-none'}`}></div>
+      <div onClick={() => setOpenMenu(false)} className={`duration-500 fixed inset-0 bg-black z-30 ${openMenu ? "opacity-50 pointer-events-auto" : "opacity-0 pointer-events-none"}`}></div>
 
       {openMenu && (
         <div className="duration-500 w-full fixed top-0 z-50 bg-landing px-6 shadow-2xl translate-x-0">
