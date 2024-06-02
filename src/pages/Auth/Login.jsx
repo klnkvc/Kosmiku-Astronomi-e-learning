@@ -112,7 +112,7 @@ export default function Login() {
                       Remember Me
                     </label>
                   </div>
-                  <p className="text-white text-center text-sm">
+                  <p className="text-white text-center text-xs">
                     Tidak punya akun?{" "}
                     <span>
                       <Link className="text-based-1" to={"/register"}>
@@ -121,15 +121,10 @@ export default function Login() {
                     </span>
                   </p>
                 </div>
-                {errorMessage && <p className="text-error text-center font-bold">{errorMessage}</p>}
+                {errorMessage && <p className="text-wrongSelected underline-offset-2 underline text-xs text-center font-bold">{errorMessage}</p>}
               </div>
 
-              <button
-                className={
-                  "py-2 relative h-[48px] lg:py-3 px-14 rounded-[60px] transition-all duration-300 bg-none border-based border hover:bg-based text-white text-sm lg:text-base w-full mt-4 md:mt-8"
-                }
-                type="submit"
-              >
+              <button className={"py-2 h-[48px] rounded-[60px] transition-all duration-300 border-based border hover:bg-based text-white text-sm lg:text-base w-full mt-4 md:mt-8"} type="submit">
                 {isLoading ? <img src={Loader} className="mx-auto" /> : <p>Login</p>}
               </button>
             </form>

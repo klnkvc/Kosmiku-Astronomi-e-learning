@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import BasedLayout from "../../layout/BasedLayout";
 import Button from "../../components/Button";
 import logo from "../../assets/decoration/logo.png";
+import Loader from "../../assets/loader/Ring.svg";
 
 import hide from "../../assets/decoration/hide.svg";
 import show from "../../assets/decoration/show.svg";
@@ -11,6 +12,7 @@ import { useNavigate } from "react-router-dom";
 export default function Register() {
   const [isPasswordVisible, setIsPasswordVisible] = useState(false);
   const [isConfirmVisible, setIsConfirmVisible] = useState(false);
+  const [isLoading, setIsLoading] = useState(false);
 
   //form hook
   const [nama_lengkap, setName] = useState("");
@@ -34,9 +36,12 @@ export default function Register() {
 
   const handleSubmit = (event) => {
     event.preventDefault();
+    setIsLoading(true);
 
     if (password !== confirmPassword) {
       setErrorMessage("Password dan konfirmasi password tidak cocok.");
+      setIsLoading(false);
+
       return;
     }
 
@@ -50,16 +55,21 @@ export default function Register() {
         if (!response.ok) {
           throw new Error("Failed to register");
         }
+        setIsLoading(false);
         return response.json();
       })
       .then((data) => {
         console.log("isi data", data);
         localStorage.setItem("isLoggedIn", true);
         localStorage.setItem("user", JSON.stringify(data));
+        setIsLoading(false);
+
         navigate("/");
       })
       .catch((error) => {
         setError("Register Failed");
+        setIsLoading(false);
+
         console.log(error);
       });
   };
@@ -188,8 +198,8 @@ export default function Register() {
                     </div>
                   </div>
                 </div>
-                {errorMessage && password !== confirmPassword && <p className="text-error font-bold">{errorMessage}</p>}
-                <p className="text-white text-center text-sm">
+                {errorMessage && password !== confirmPassword && <p className="text-wrongSelected underline-offset-2 underline text-xs text-center font-bold">{errorMessage}</p>}
+                <p className="text-white text-center text-xs">
                   Sudah punya akun?{" "}
                   <span>
                     <Link className="text-based-1" to={"/login"}>
@@ -198,7 +208,9 @@ export default function Register() {
                   </span>
                 </p>
               </div>{" "}
-              <Button className={"w-full mt-4 md:mt-16"} type={"button"} variant={"outline"} children={"Register"} />
+              <button className={"py-2 h-[48px] rounded-[60px] transition-all duration-300 border-based border hover:bg-based text-white text-sm lg:text-base w-full mt-4 md:mt-8"} type="submit">
+                {isLoading ? <img src={Loader} className="mx-auto" /> : <p>Register</p>}
+              </button>
             </form>
           </div>
         </div>
