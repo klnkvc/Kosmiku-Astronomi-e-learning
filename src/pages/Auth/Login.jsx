@@ -5,6 +5,7 @@ import hide from "../../assets/decoration/hide.svg";
 import show from "../../assets/decoration/show.svg";
 import Button from "../../components/Button";
 import { Link } from "react-router-dom";
+import Loader from "../../assets/loader/Ring.svg";
 import { useNavigate } from "react-router-dom";
 
 export default function Login() {
@@ -12,6 +13,7 @@ export default function Login() {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [errorMessage, setErrorMessage] = useState("");
+  const [isLoading, setIsLoading] = useState(false);
   const navigate = useNavigate();
 
   function togglePasswordVisibility() {
@@ -21,6 +23,7 @@ export default function Login() {
   const handleSubmit = async (event) => {
     event.preventDefault();
     const userData = { email, password };
+    setIsLoading(true);
     try {
       const response = await fetch("http://localhost:8081/user/login", {
         method: "POST",
@@ -40,6 +43,8 @@ export default function Login() {
     } catch (error) {
       setErrorMessage("Email atau Password Salah !");
       console.log(error);
+    } finally {
+      setIsLoading(false);
     }
   };
   return (
@@ -118,7 +123,15 @@ export default function Login() {
                 </div>
                 {errorMessage && <p className="text-error text-center font-bold">{errorMessage}</p>}
               </div>
-              <Button className={"w-full mt-4 md:mt-8"} type={"button"} variant={"outline"} children={"Login"} />
+
+              <button
+                className={
+                  "py-2 relative h-[48px] lg:py-3 px-14 rounded-[60px] transition-all duration-300 bg-none border-based border hover:bg-based text-white text-sm lg:text-base w-full mt-4 md:mt-8"
+                }
+                type="submit"
+              >
+                {isLoading ? <img src={Loader} className="mx-auto" /> : <p>Login</p>}
+              </button>
             </form>
           </div>
         </div>

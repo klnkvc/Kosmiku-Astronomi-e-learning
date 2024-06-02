@@ -1,5 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import Loader from "../assets/loader/Ring.svg";
 
 const Button = ({ variant = "primary", type, link, style, className, onClick, children }) => {
   let buttonClassName = "py-2 lg:py-3 px-14 rounded-[60px] transition-all duration-300 ";
