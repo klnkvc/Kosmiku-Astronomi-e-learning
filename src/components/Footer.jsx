@@ -46,8 +46,8 @@ export default function Footer() {
                         </div>
                     </div>
                 </div>
-                <hr className="h-px z-10 my-16 bg-white border-0"></hr>
-                <p className='text-sm text-center mb-10'>© Copyright 2024, All Rights Reserved by Kosmiku</p>
+                <hr className="relative h-px z-10 my-16 bg-white border-0"></hr>
+                <p className='relative z-10 text-sm text-center mb-10'>© Copyright 2024, All Rights Reserved by Kosmiku</p>
             </div>
         </section>
     )

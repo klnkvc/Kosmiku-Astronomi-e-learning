@@ -11,7 +11,7 @@ export default function index() {
             <section id='materi' className='materi flex justify-center py-12 md:py-16 relative'>
                 <div className="w-4/5 md:w-3/4 grid grid-cols-1 items-center">
                     <div className='text-white z-10'>
-                        <h1 className='md:text-center font-magmawave text-3xl md:text-4xl lg:text-5xl bg-gradient-to-r from-based-2 to-based-3 inline-block text-transparent bg-clip-text'>Saturnus: Cincin dan Masa Lalu yang Tersembunyi</h1>
+                        <h1 className='mt-24 lg:mt-28 md:text-center font-magmawave text-3xl md:text-4xl lg:text-5xl bg-gradient-to-r from-based-2 to-based-3 inline-block text-transparent bg-clip-text'>Saturnus: Cincin dan Masa Lalu yang Tersembunyi</h1>
                         <div className="flex justify-center my-16">
                             <img className='w-[300px] md:max-w-[400px] animate-[hero_5s_linear_infinite]' src={saturn} alt="" />
                         </div>
