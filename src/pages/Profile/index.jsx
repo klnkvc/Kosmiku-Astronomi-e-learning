@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import BasedLayout from "../../layout/BasedLayout";
 import Profile from "../../assets/Profile/padukajavier.png";
 import deco from "../../assets/decoration/deco1.png";
@@ -8,12 +8,31 @@ import image from "../../assets/hero/mars.jpeg";
 import { useNavigate } from "react-router-dom";
 import ProfileCard from "../../components/ProfileCard";
 
-export default function index() {
+export default function Index() {
+  const [isLoggedIn, setIsLoggedIn] = useState(false);
+  const [user, setUser] = useState(null);
+  const navigate = useNavigate();
+
+  useEffect(() => {
+    const loggedInStatus = localStorage.getItem("isLoggedIn");
+    const userString = localStorage.getItem("user");
+
+    if (loggedInStatus === "true" && userString) {
+      const userData = JSON.parse(userString);
+      setUser(userData);
+      setIsLoggedIn(true);
+    } else {
+      navigate("/login"); // Arahkan ke halaman login jika belum login
+    }
+  }, [navigate]);
+
   const handleLogout = () => {
     localStorage.setItem("isLoggedIn", "false");
-    navigate("/");
+    localStorage.removeItem("user"); // Hapus data user dari localStorage saat logout
+    setIsLoggedIn(false);
+    setUser(null);
+    navigate("/login");
   };
-  const navigate = useNavigate();
   return (
     <BasedLayout>
       <sections id="Profile" className="relative px-1 min-h-min gap-10">
@@ -22,8 +41,8 @@ export default function index() {
             <div className="w-full flex items-center gap-3 lg:gap-4">
               <img id="Avatar" src={Profile} className="w-12 h-12 lg:w-24 lg:h-24"></img>
               <div className="flex flex-col ">
-                <h1 className=" text-sm lg:text-xl font-bold text-left line-clamp-2 text-white">Paduka Javier</h1>
-                <p className="text-white text-xs lg:text-md">masihmewing2024@gmail.com</p>
+                <h1 className=" text-sm lg:text-xl font-bold text-left line-clamp-2 text-white">{user?.data.nama_lengkap}</h1>
+                <p className="text-white text-xs lg:text-md">{user?.data.alamat_email}</p>
               </div>
             </div>
 
