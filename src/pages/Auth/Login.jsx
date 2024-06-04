@@ -58,7 +58,7 @@ export default function Login() {
             <div className="logo flex flex-col items-center gap-3">
               <img className="h-16 sm:h-24" src={logo} alt="" />
             </div>
-            <form className="mt-2" onSubmit={handleSubmit}>
+            <form method="post" className="mt-2" onSubmit={handleSubmit}>
               <div className="md:mx-20 flex flex-col gap-5">
                 <div className="flex flex-col gap-4">
                   <label className="text-base font-medium text-white" htmlFor="email">
