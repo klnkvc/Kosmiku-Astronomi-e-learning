@@ -40,8 +40,8 @@ export default function Navbar(className) {
           </div>
 
           {isLoggedIn ? (
-            <div className="flex flex-row items-center gap-4">
-              <div className='rounded-full w-16 h-16 bg-cover bg-center' style={{ backgroundImage: `url('https://media.suara.com/pictures/653x366/2024/02/27/18939-dpr-ian-instagramcomdprian.jpg')` }} ></div>
+            <div className="flex flex-row items-center">
+              <div className='rounded-full w-10 h-10 bg-cover bg-center' style={{ backgroundImage: `url('https://media.suara.com/pictures/653x366/2024/02/27/18939-dpr-ian-instagramcomdprian.jpg')` }} ></div>
               <Button className={"z-10"} variant={"button"} children={user.data.nama_lengkap} link={"/profile"} />
             </div>
           ) : (

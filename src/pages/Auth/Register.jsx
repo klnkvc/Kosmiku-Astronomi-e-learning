@@ -1,18 +1,16 @@
 import React, { useState } from "react";
 import BasedLayout from "../../layout/BasedLayout";
 import Button from "../../components/Button";
+import avatar from "../../components/Avatars";
 import logo from "../../assets/decoration/logo.png";
 import Loader from "../../assets/loader/Ring.svg";
-import closeChatbot from '../../assets/decoration/closeChatbot.svg'
-import Oval from '../../assets/Profile/Oval.png'
-import Oval1 from '../../assets/Profile/Oval-1.png'
-import Oval2 from '../../assets/Profile/Oval-2.png'
-import Oval3 from '../../assets/Profile/Oval-3.png'
+import closeChatbot from "../../assets/decoration/closeChatbot.svg";
 
 import hide from "../../assets/decoration/hide.svg";
 import show from "../../assets/decoration/show.svg";
 import { Link } from "react-router-dom";
 import { useNavigate } from "react-router-dom";
+import AvatarSelection from "../../components/Avatars";
 
 export default function Register() {
   const [isPasswordVisible, setIsPasswordVisible] = useState(false);
@@ -93,9 +91,14 @@ export default function Register() {
             <form className="mt-2" onSubmit={handleSubmit}>
               <div className="md:mx-20 flex flex-col gap-5">
                 <div className="flex flex-col items-center gap-4">
-                  <label className="text-base font-medium text-white" htmlFor="avatar">Avatar</label>
-                  <div className='rounded-full w-[190px] h-[190px] bg-cover bg-center' style={{ backgroundImage: `url('https://media.suara.com/pictures/653x366/2024/02/27/18939-dpr-ian-instagramcomdprian.jpg')` }} ></div>
-                  <Button onClick={() => setIsAvatar(!isAvatar)} type={'clickable'} children={'Pilih Avatar'} variant={'outline'} />
+                  <label className="text-base font-medium text-white" htmlFor="avatar">
+                    Avatar
+                  </label>
+                  <div
+                    className="rounded-full w-[190px] h-[190px] bg-cover bg-center"
+                    style={{ backgroundImage: `url('https://media.suara.com/pictures/653x366/2024/02/27/18939-dpr-ian-instagramcomdprian.jpg')` }}
+                  ></div>
+                  <Button onClick={() => setIsAvatar(!isAvatar)} type={"clickable"} children={"Pilih Avatar"} variant={"outline"} />
                 </div>
                 <div className="flex flex-col gap-4">
                   <label className="text-base font-medium text-white" htmlFor="name">
@@ -226,31 +229,24 @@ export default function Register() {
           </div>
         </div>
 
-        <div onClick={() => setIsAvatar(false)} className={`duration-500 fixed inset-0 bg-black z-20 ${isAvatar ? 'opacity-50 pointer-events-auto' : 'opacity-0 pointer-events-none'}`}></div>
+        <div onClick={() => setIsAvatar(false)} className={`duration-500 fixed inset-0 bg-black z-20 ${isAvatar ? "opacity-50 pointer-events-auto" : "opacity-0 pointer-events-none"}`}></div>
 
-        {
-          isAvatar && (
-            <div className="duration-500 fixed z-50 mx-auto top-28 rounded-3xl border-4 border-quest-1 m-4 md:m-0 p-8 text-white bg-landing ">
-              <div className="relative">
-                <div className='z-50 absolute -right-10 md:left-[580px] -top-10 lg:-top-12 w-8 lg:w-11' onClick={() => setIsAvatar(!isAvatar)} >
-                  <img src={closeChatbot} alt="" />
+        {isAvatar && (
+          <div className="duration-500 fixed z-50 mx-auto top-28 rounded-3xl border-4 border-quest-1 m-4 md:m-0 p-8 text-white bg-landing ">
+            <div className="relative">
+              <div className="z-50 absolute -right-10 md:left-[580px] -top-10 lg:-top-12 w-8 lg:w-11" onClick={() => setIsAvatar(!isAvatar)}>
+                <img src={closeChatbot} alt="" />
+              </div>
+              <div className="flex flex-col gap-8 items-center">
+                <h4 className="text-2xl font-medium">Pilih Avatarmu</h4>
+                <div className="">
+                  <AvatarSelection />
                 </div>
-                <div className="flex flex-col gap-8 items-center">
-                  <h4 className='text-2xl font-medium'>Pilih Avatarmu</h4>
-                  <div className="grid grid-cols-2 md:grid-cols-4 gap-8 items-center justify-start">
-                    <img className='w-[120px] h-[120px]' src={Oval} alt="" />
-                    <img className='w-[120px] h-[120px]' src={Oval1} alt="" />
-                    <img className='w-[120px] h-[120px]' src={Oval2} alt="" />
-                    <img className='w-[120px] h-[120px]' src={Oval3} alt="" />
-                  </div>
-                  <Button onClick={() => setIsAvatar(!isAvatar)} className={'w-fit'} type={'clickable'} children={'Simpan'} variant={'outline'} />
-
-                </div>
+                <Button onClick={() => setIsAvatar(!isAvatar)} className={"w-fit"} type={"clickable"} children={"Simpan"} variant={"outline"} />
               </div>
             </div>
-          )
-        }
-
+          </div>
+        )}
       </section>
     </BasedLayout>
   );
