@@ -25,10 +25,10 @@ export default function Register() {
   const [tanggal_lahir, setDob] = useState("");
   const [password, setPassword] = useState("");
   const [confirmPassword, setConfirmPassword] = useState("");
-  const [avatarUser, setAvatarUser] = useState("");
+  const [avatarUser, setAvatarUser] = useState("http://localhost:8081/public/avatars/avatar1.png");
   const [errorMessage, setErrorMessage] = useState("");
   const navigate = useNavigate();
-  let selectedAvatar = "";
+  let selectedAvatar = "http://localhost:8081/public/avatars/avatar1.png";
   //API
   const [error, setError] = useState("");
   const handleSelectAvatar = (avatar) => {
@@ -100,15 +100,15 @@ export default function Register() {
             </div>
             <form className="mt-2" onSubmit={handleSubmit}>
               <div className="md:mx-20 flex flex-col gap-5">
-                <div className="flex flex-col items-center gap-4">
+                <div className="flex flex-col gap-4">
                   <label className="text-base font-medium text-white" htmlFor="avatar">
                     Avatar
                   </label>
-                  <div
-                    className="rounded-full w-[190px] h-[190px] bg-cover bg-center"
-                    style={{ backgroundImage: `url('https://media.suara.com/pictures/653x366/2024/02/27/18939-dpr-ian-instagramcomdprian.jpg')` }}
-                  ></div>
-                  <Button onClick={() => setIsAvatar(!isAvatar)} type={"clickable"} children={"Pilih Avatar"} variant={"outline"} />
+                  <div className="flex flex-col gap-4 items-center">
+                    {" "}
+                    <img src={avatarUser} className="h-32 w-32" alt="" />
+                    <Button onClick={() => setIsAvatar(!isAvatar)} type={"clickable"} children={"Pilih Avatar"} variant={"outline"} />
+                  </div>
                 </div>
                 <div className="flex flex-col gap-4">
                   <label className="text-base font-medium text-white" htmlFor="name">
