@@ -2,6 +2,16 @@ import React, { useEffect, useState } from "react";
 
 const AvatarSelection = ({ onSelectAvatar }) => {
   const [avatars, setAvatars] = useState([]);
+  const [selectedAvatar, setSelectedAvatar] = useState(null);
+
+  const activeAvatar = (avatar) => {
+    if (typeof onSelectAvatar === "function") {
+      onSelectAvatar(avatar);
+      setSelectedAvatar(avatar);
+    } else {
+      console.error("onSelectAvatar is not a function");
+    }
+  };
 
   useEffect(() => {
     fetch("http://localhost:8081/user/avatars")
@@ -27,7 +37,13 @@ const AvatarSelection = ({ onSelectAvatar }) => {
   return (
     <div className="grid grid-cols-2 md:grid-cols-4 gap-8 items-center justify-start">
       {avatars.map((avatar, index) => (
-        <img key={index} src={avatar} alt={`avatar`} onClick={() => onSelectAvatar(avatar)} style={{ cursor: "pointer", width: "100px", height: "100px" }} />
+        <img
+          key={index}
+          src={avatar}
+          alt={`avatar`}
+          onClick={() => activeAvatar(avatar)}
+          className={`cursor-pointer h-[100px] w-[100px] transition-all duration-200 hover:scale-110 ${selectedAvatar === avatar ? "bg-white rounded-full p-2" : ""}`}
+        />
       ))}
     </div>
   );

@@ -25,12 +25,22 @@ export default function Register() {
   const [tanggal_lahir, setDob] = useState("");
   const [password, setPassword] = useState("");
   const [confirmPassword, setConfirmPassword] = useState("");
+  const [avatarUser, setAvatarUser] = useState("");
   const [errorMessage, setErrorMessage] = useState("");
   const navigate = useNavigate();
-
+  let selectedAvatar = "";
   //API
   const [error, setError] = useState("");
-
+  const handleSelectAvatar = (avatar) => {
+    console.log("Avatar User:", avatar);
+    selectedAvatar = avatar;
+    console.log("Selected Avatar:", selectedAvatar);
+  };
+  const saveAvatar = () => {
+    setIsAvatar(!isAvatar);
+    setAvatarUser(selectedAvatar);
+    console.log("Saved Avatar User:", avatarUser);
+  };
   function togglePasswordVisibility() {
     setIsPasswordVisible((prevState) => !prevState);
   }
@@ -49,7 +59,7 @@ export default function Register() {
       return;
     }
 
-    const userData = { nama_lengkap, alamat_email, jenjang_pendidikan, tanggal_lahir, password };
+    const userData = { avatarUser, nama_lengkap, alamat_email, jenjang_pendidikan, tanggal_lahir, password };
     fetch("http://localhost:8081/user/register", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
@@ -240,9 +250,9 @@ export default function Register() {
               <div className="flex flex-col gap-8 items-center">
                 <h4 className="text-2xl font-medium">Pilih Avatarmu</h4>
                 <div className="">
-                  <AvatarSelection />
+                  <AvatarSelection onSelectAvatar={handleSelectAvatar} />
                 </div>
-                <Button onClick={() => setIsAvatar(!isAvatar)} className={"w-fit"} type={"clickable"} children={"Simpan"} variant={"outline"} />
+                <Button onClick={() => saveAvatar()} className={"w-fit"} type={"clickable"} children={"Simpan"} variant={"outline"} />
               </div>
             </div>
           </div>
