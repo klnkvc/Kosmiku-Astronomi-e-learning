@@ -39,7 +39,7 @@ export default function Index() {
         <div className="bg-category-5 p-4 lg:p-8 mt-32 flex flex-col border-solid border-based-1 rounded-md lg:rounded-[64px] border-4 mx-4 lg:mx-20 gap-4">
           <div id="upper" className="relative w-full flex flex-col lg:flex-row items-center gap-3 lg:gap-4">
             <div className="w-full flex items-center gap-3 lg:gap-4">
-              <img id="Avatar" src={Profile} className="w-12 h-12 lg:w-24 lg:h-24"></img>
+              <img id="Avatar" src={user?.data.avatarUser} className="w-12 h-12 lg:w-24 lg:h-24"></img>
               <div className="flex flex-col ">
                 <h1 className=" text-sm lg:text-xl font-bold text-left line-clamp-2 text-white">{user?.data.nama_lengkap}</h1>
                 <p className="text-white text-xs lg:text-md">{user?.data.alamat_email}</p>
