@@ -1,7 +1,6 @@
 import React, { useState } from "react";
 import BasedLayout from "../../layout/BasedLayout";
 import Button from "../../components/Button";
-import avatar from "../../components/Avatars";
 import logo from "../../assets/decoration/logo.png";
 import Loader from "../../assets/loader/Ring.svg";
 import closeChatbot from "../../assets/decoration/closeChatbot.svg";
@@ -25,21 +24,21 @@ export default function Register() {
   const [tanggal_lahir, setDob] = useState("");
   const [password, setPassword] = useState("");
   const [confirmPassword, setConfirmPassword] = useState("");
-  const [avatarUser, setAvatarUser] = useState("http://localhost:8081/public/avatars/avatar1.png");
+  const [avatar, setAvatar] = useState("http://localhost:8081/public/avatars/avatar1.png");
   const [errorMessage, setErrorMessage] = useState("");
   const navigate = useNavigate();
   let selectedAvatar = "http://localhost:8081/public/avatars/avatar1.png";
   //API
   const [error, setError] = useState("");
-  const handleSelectAvatar = (avatar) => {
+  const handleSelectAvatar = (avatars) => {
     console.log("Avatar User:", avatar);
-    selectedAvatar = avatar;
+    selectedAvatar = avatars;
     console.log("Selected Avatar:", selectedAvatar);
   };
   const saveAvatar = () => {
     setIsAvatar(!isAvatar);
-    setAvatarUser(selectedAvatar);
-    console.log("Saved Avatar User:", avatarUser);
+    setAvatar(selectedAvatar);
+    console.log("Saved Avatar User:", avatar);
   };
   function togglePasswordVisibility() {
     setIsPasswordVisible((prevState) => !prevState);
@@ -59,7 +58,7 @@ export default function Register() {
       return;
     }
 
-    const userData = { avatarUser, nama_lengkap, alamat_email, jenjang_pendidikan, tanggal_lahir, password };
+    const userData = { avatar, nama_lengkap, alamat_email, jenjang_pendidikan, tanggal_lahir, password };
     fetch("http://localhost:8081/user/register", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
@@ -106,7 +105,7 @@ export default function Register() {
                   </label>
                   <div className="flex flex-col gap-4 items-center">
                     {" "}
-                    <img src={avatarUser} className="h-32 w-32" alt="" />
+                    <img src={avatar} className="h-32 w-32" alt="" />
                     <Button onClick={() => setIsAvatar(!isAvatar)} type={"clickable"} children={"Pilih Avatar"} variant={"outline"} />
                   </div>
                 </div>

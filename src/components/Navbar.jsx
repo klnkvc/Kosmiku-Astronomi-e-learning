@@ -40,7 +40,7 @@ export default function Navbar(className) {
           </div>
 
           {isLoggedIn ? (
-            <Button className={"z-10"} img={user.data.avatarUser} type={"profile"} variant={"button"} children={user.data.nama_lengkap} link={"/profile"} />
+            <Button className={"z-10"} img={user.data.avatar} type={"profile"} variant={"button"} children={user.data.nama_lengkap} link={"/profile"} />
           ) : (
             <Button className={"z-10"} variant={"outline"} children={"Logins"} link={"/login"} />
           )}
