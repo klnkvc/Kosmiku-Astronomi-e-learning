@@ -4,12 +4,15 @@ import Button from "./Button";
 import logo from "../assets/decoration/logo.png";
 import dropdownBlack from "../assets/decoration/dropdownBlack.svg";
 import close from "../assets/decoration/close.svg";
+import { useLocation } from "react-router-dom";
 
 export default function Navbar(className) {
   const [openMenu, setOpenMenu] = useState(false);
   const [isLoggedIn, setIsLoggedIn] = useState(false);
+  const [nama_lengkap, setName] = useState("");
   const [user, setUser] = useState(null);
-
+  const location = useLocation();
+  const isProfilePage = location.pathname === "/profile";
   useEffect(() => {
     const loggedInStatus = localStorage.getItem("isLoggedIn");
     setIsLoggedIn(loggedInStatus === "true");
@@ -40,7 +43,7 @@ export default function Navbar(className) {
           </div>
 
           {isLoggedIn ? (
-            <Button className={"z-10"} img={user.data.avatar} type={"profile"} variant={"button"} children={user.data.nama_lengkap} link={"/profile"} />
+            !isProfilePage && <Button className={"z-10"} img={user.data.avatar} type={"profile"} variant={"button"} children={user?.data.nama_lengkap} link={"/profile"} />
           ) : (
             <Button className={"z-10"} variant={"outline"} children={"Logins"} link={"/login"} />
           )}
