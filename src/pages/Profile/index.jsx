@@ -19,7 +19,33 @@ export default function Index() {
   const [avatar, setAvatar] = useState("");
   const [selectedAvatar, setSelectedAvatar] = useState("");
   const navigate = useNavigate();
+  useEffect(() => {
+    fetch("http://localhost:8081/auth/get-data", { method: "GET", credentials: "include" })
+      .then((response) => {
+        if (!response.ok) {
+          throw new Error("Failed to fetch user data");
+        }
+        return response.json();
+      })
+      .then((data) => {
+        console.log("Data pengguna setelah login:", data);
 
+        if (data.session) {
+          const userData = data.session.user;
+          setUser(userData);
+          console.log("userData : ", userData);
+
+          const loggedInStatus = data.session.isLoggedIn;
+          setIsLoggedIn(loggedInStatus);
+          console.log("Status login : ", loggedInStatus);
+        } else {
+          throw new Error("Session data not found in response");
+        }
+      })
+      .catch((error) => {
+        console.error("Error:", error);
+      });
+  }, []);
   useEffect(() => {
     const loggedInStatus = localStorage.getItem("isLoggedIn");
     const userString = localStorage.getItem("user");

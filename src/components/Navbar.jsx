@@ -13,15 +13,33 @@ export default function Navbar(className) {
   const [user, setUser] = useState(null);
   const location = useLocation();
   const isProfilePage = location.pathname === "/profile";
-  useEffect(() => {
-    const loggedInStatus = localStorage.getItem("isLoggedIn");
-    setIsLoggedIn(loggedInStatus === "true");
 
-    const userString = localStorage.getItem("user");
-    if (userString) {
-      const userData = JSON.parse(userString);
-      setUser(userData);
-    }
+  useEffect(() => {
+    fetch("http://localhost:8081/auth/get-data", { method: "GET", credentials: "include" })
+      .then((response) => {
+        if (!response.ok) {
+          throw new Error("Failed to fetch user data");
+        }
+        return response.json();
+      })
+      .then((data) => {
+        console.log("Data pengguna setelah login:", data);
+
+        if (data.session) {
+          const userData = data.session.user;
+          setUser(userData);
+          console.log("userData : ", userData);
+
+          const loggedInStatus = data.session.isLoggedIn;
+          setIsLoggedIn(loggedInStatus);
+          console.log("Status login : ", loggedInStatus);
+        } else {
+          throw new Error("Session data not found in response");
+        }
+      })
+      .catch((error) => {
+        console.error("Error:", error);
+      });
   }, []);
   return (
     <section id="navbar" className={`navbar ${className}`}>
@@ -43,7 +61,7 @@ export default function Navbar(className) {
           </div>
 
           {isLoggedIn ? (
-            !isProfilePage && <Button className={"z-10"} img={user.data.avatar} type={"profile"} variant={"button"} children={user?.data.nama_lengkap} link={"/profile"} />
+            !isProfilePage && <Button className={"z-10"} img={user.avatar} type={"profile"} variant={"button"} children={user?.nama_lengkap} link={"/profile"} />
           ) : (
             <Button className={"z-10"} variant={"outline"} children={"Logins"} link={"/login"} />
           )}

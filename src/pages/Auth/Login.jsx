@@ -25,20 +25,21 @@ export default function Login() {
     const userData = { email, password };
     setIsLoading(true);
     try {
-      const response = await fetch("http://localhost:8081/user/login", {
+      const response = await fetch("http://localhost:8081/auth/login", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
         },
+        credentials: "include",
         body: JSON.stringify(userData),
       });
       if (!response.ok) {
         throw new Error("Failed to login");
       }
       const data = await response.json();
-      console.log("User ditemukan : ", data);
-      localStorage.setItem("isLoggedIn", true);
-      localStorage.setItem("user", JSON.stringify(data));
+      console.log("User ditemukan : ", data.data);
+      // localStorage.setItem("isLoggedIn", true);
+      // localStorage.setItem("user", JSON.stringify(data));
       navigate("/");
     } catch (error) {
       setErrorMessage("Email atau Password Salah !");
