@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import { useState, useEffect } from "react";
 import BasedLayout from "../../layout/BasedLayout";
 import Button from "../../components/Button";
 import hero from "../../assets/hero/hero.png";

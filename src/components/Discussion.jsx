@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import { useState } from 'react'
 import Button from './Button'
 import reply from '../assets/decoration/reply.svg'
 import comment from '../assets/decoration/comment.svg'
@@ -20,7 +20,7 @@ export default function Discussion() {
                             <p className='lg:hidden text-base md:text-xl font-bold text-white'>DPR Ian</p>
                         </div>
                         <form className='w-full flex flex-col md:flex-row gap-8' action="" method="post">
-                            <input type="text" name="comment" class="p-8 w-full rounded-[60px] text-base text-white bg-transparent outline outline-white focus:bg-transparent focus:text-gray-900" placeholder="Tambahkan Komentar" autocomplete="off" />
+                            <input type="text" name="comment" className="p-8 w-full rounded-[60px] text-base text-white bg-transparent outline outline-white focus:bg-transparent focus:text-gray-900" placeholder="Tambahkan Komentar" autoComplete="off" />
                             <Button type={'button'} className={'h-fit w-fit'} children={'Kirim'} />
                         </form>
                     </div>

@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import Button from "./Button";
 import logo from "../assets/decoration/logo.png";
@@ -9,7 +9,6 @@ import { useLocation } from "react-router-dom";
 export default function Navbar(className) {
   const [openMenu, setOpenMenu] = useState(false);
   const [isLoggedIn, setIsLoggedIn] = useState(false);
-  const [nama_lengkap, setName] = useState("");
   const [user, setUser] = useState(null);
   const location = useLocation();
   const isProfilePage = location.pathname === "/profile";

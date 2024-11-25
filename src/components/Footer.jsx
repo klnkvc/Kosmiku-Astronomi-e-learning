@@ -1,4 +1,3 @@
-import React from 'react'
 import logo from '../assets/decoration/logo.png'
 import instagram from '../assets/decoration/instagram.png'
 import linkedIn from '../assets/decoration/linkedIn.png'

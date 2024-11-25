@@ -1,9 +1,8 @@
-import React, { useState } from "react";
+import { useState } from "react";
 import BasedLayout from "../../layout/BasedLayout";
 import logo from "../../assets/decoration/logo.png";
 import hide from "../../assets/decoration/hide.svg";
 import show from "../../assets/decoration/show.svg";
-import Button from "../../components/Button";
 import { Link } from "react-router-dom";
 import Loader from "../../assets/loader/Ring.svg";
 import { useNavigate } from "react-router-dom";

@@ -1,4 +1,3 @@
-import React from 'react'
 import BasedLayout from '../../layout/BasedLayout'
 import saturn from '../../assets/topic/saturn.png'
 import saturnus from '../../assets/topic/saturnus.png'

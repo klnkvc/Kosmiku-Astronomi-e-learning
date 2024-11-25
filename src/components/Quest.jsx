@@ -1,4 +1,3 @@
-import React from "react";
 import kosmiQuest from "../assets/hero/kosmiQuest.png";
 import Button from "./Button";
 

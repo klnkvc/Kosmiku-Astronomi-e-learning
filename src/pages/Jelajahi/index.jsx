@@ -1,4 +1,3 @@
-import React from "react";
 import BasedLayout from "../../layout/BasedLayout";
 import Card from "../../components/Card";
 import saturnus from "../../assets/hero/saturnus.jpeg";
@@ -23,7 +22,7 @@ export default function index() {
               <div className="relative text-gray-600 focus-within:text-gray-400">
                 <span className="absolute inset-y-0 left-0 flex items-center pl-3 lg:pl-6">
                   <button type="submit" className="p-1 focus:outline-none focus:shadow-outline">
-                    <svg fill="none" stroke="rgb(107 114 128)" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" className="w-6 h-6">
+                    <svg fill="none" stroke="rgb(107 114 128)" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" viewBox="0 0 24 24" className="w-6 h-6">
                       <path d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path>
                     </svg>
                   </button>
@@ -34,7 +33,7 @@ export default function index() {
                     name="q"
                     className="py-3 px-6 w-full rounded-[60px] text-xs lg:text-base text-white bg-landing pl-14 focus:outline-none focus:bg-landing focus:text-gray-900"
                     placeholder="Telusuri Topik"
-                    autocomplete="off"
+                    autoComplete="off"
                   />
                 </div>
               </div>

@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import { useState } from "react";
 import profile from "../assets/decoration/profile.png";
 import chatbot from "../assets/decoration/chatbot.png";
 import iconChatbot from "../assets/decoration/iconChatbot.png";
@@ -12,7 +12,6 @@ export default function Chatbot() {
     question: "",
   });
   const [chat, setChat] = useState([]);
-  const [responses, setResponses] = useState([]);
   const handleChange = (e) => {
     const { name, value } = e.target;
     setFormData((prevState) => ({

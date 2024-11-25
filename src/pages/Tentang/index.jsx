@@ -1,4 +1,3 @@
-import React from "react";
 import BasedLayout from "../../layout/BasedLayout";
 import hero from "../../assets/aboutUs/hero.png";
 import explore from "../../assets/hero/explore.png";

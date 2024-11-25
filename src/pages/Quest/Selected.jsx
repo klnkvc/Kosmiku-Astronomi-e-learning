@@ -1,4 +1,3 @@
-import React from 'react'
 import rocket from '../../assets/decoration/rocket.png'
 import profile from '../../assets/decoration/profile.png'
 import help from '../../assets/decoration/help.svg'

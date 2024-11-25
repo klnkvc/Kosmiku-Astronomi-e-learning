@@ -1,6 +1,5 @@
-import React, { useState, useEffect } from "react";
+import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
-import Loader from "../assets/loader/Ring.svg";
 
 const Button = ({ variant = "primary", type, link, style, className, onClick, children, img }) => {
   const [user, setUser] = useState(null);
