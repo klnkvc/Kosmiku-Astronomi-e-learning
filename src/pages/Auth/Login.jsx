@@ -25,7 +25,7 @@ export default function Login() {
     const userData = { email, password };
     setIsLoading(true);
     try {
-      const response = await fetch("http://localhost:8081/auth/login", {
+      const response = await fetch(`${import.meta.env.VITE_APIURL}/auth/login`, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",

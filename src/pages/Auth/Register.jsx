@@ -24,10 +24,10 @@ export default function Register() {
   const [tanggal_lahir, setDob] = useState("");
   const [password, setPassword] = useState("");
   const [confirmPassword, setConfirmPassword] = useState("");
-  const [avatar, setAvatar] = useState("http://localhost:8081/public/avatars/avatar1.png");
+  const [avatar, setAvatar] = useState(`${import.meta.env.VITE_APIURL}/public/avatars/avatar1.png`);
   const [errorMessage, setErrorMessage] = useState("");
   const navigate = useNavigate();
-  let selectedAvatar = "http://localhost:8081/public/avatars/avatar1.png";
+  let selectedAvatar = `${import.meta.env.VITE_APIURL}/public/avatars/avatar1.png`;
   //API
   const [error, setError] = useState("");
   const handleSelectAvatar = (avatars) => {
@@ -59,7 +59,7 @@ export default function Register() {
     }
 
     const userData = { avatar, nama_lengkap, alamat_email, jenjang_pendidikan, tanggal_lahir, password };
-    fetch("http://localhost:8081/user/register", {
+    fetch(`${import.meta.env.VITE_APIURL}/user/register`, {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify(userData),

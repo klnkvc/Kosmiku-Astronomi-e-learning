@@ -15,7 +15,7 @@ export default function Navbar(className) {
   const isProfilePage = location.pathname === "/profile";
 
   useEffect(() => {
-    fetch("http://localhost:8081/auth/get-data", { method: "GET", credentials: "include" })
+    fetch(`${import.meta.env.VITE_APIURL}/auth/get-data`, { method: "GET", credentials: "include" })
       .then((response) => {
         if (!response.ok) {
           throw new Error("Failed to fetch user data");

@@ -20,7 +20,7 @@ export default function Index() {
   const [selectedAvatar, setSelectedAvatar] = useState("");
   const navigate = useNavigate();
   useEffect(() => {
-    fetch("http://localhost:8081/auth/get-data", { method: "GET", credentials: "include" })
+    fetch(`${import.meta.env.VITE_APIURL}/auth/get-data`, { method: "GET", credentials: "include" })
       .then((response) => {
         if (!response.ok) {
           throw new Error("Failed to fetch user data");
@@ -100,7 +100,7 @@ export default function Index() {
     const userData = { nama_lengkap, avatar: selectedAvatar || avatar };
     const userString = localStorage.getItem("user");
 
-    fetch(`http://localhost:8081/user/${userID}`, {
+    fetch(`${import.meta.env.VITE_APIURL}/user/${userID}`, {
       method: "PATCH",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify(userData),

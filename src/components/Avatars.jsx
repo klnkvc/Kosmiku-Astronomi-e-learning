@@ -14,7 +14,7 @@ const AvatarSelection = ({ onSelectAvatar }) => {
   };
 
   useEffect(() => {
-    fetch("http://localhost:8081/user/avatars")
+    fetch(`${import.meta.env.VITE_APIURL}/user/avatars`)
       .then((response) => {
         if (!response.ok) {
           throw new Error("Network response was not ok");
