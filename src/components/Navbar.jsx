@@ -43,7 +43,7 @@ export default function Navbar(className) {
   }, []);
   return (
     <section id="navbar" className={`navbar ${className}`}>
-      <div className="fixed w-screen bg-category-5/40 backdrop-blur-sm max-w-[1700px] mx-auto px-0 md:px-4 lg:px-32 py-1 border-b-2 border-based-1 z-20">
+      <div className="fixed w-screen bg-category-5/40 backdrop-blur-sm mx-auto px-0 md:px-4 lg:px-32 py-1 border-b-2 border-based-1 z-20">
         <div className="hidden lg:flex justify-between items-center z-10">
           <Link className="z-10" to={"/"}>
             <img className="w-36 lg:w-44 xl:w-60" src={logo} alt="" />
